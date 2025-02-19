@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "¿Cuál es el río más largo del mundo?",
+    "options": ["Amazonas", "Nilo", "Yangtsé", "Misisipi"],
+    "correctAnswer": "Amazonas"
+  },
+  {
+    "id": 2,
+    "question": "¿En qué año llegó el hombre a la Luna?",
+    "options": ["1969", "1975", "1982", "1958"],
+    "correctAnswer": "1969"
+  },
+  {
+    "id": 3,
+    "question": "¿Quién pintó 'La noche estrellada'?",
+    "options": ["Vincent van Gogh", "Pablo Picasso", "Claude Monet", "Salvador Dalí"],
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "id": 4,
+    "question": "¿Cuál es la capital de Francia?",
+    "options": ["París", "Londres", "Berlín", "Madrid"],
+    "correctAnswer": "París"
+  },
+  {
+    "id": 5,
+    "question": "¿Quién escribió '1984'?",
+    "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "J.R.R. Tolkien"],
+    "correctAnswer": "George Orwell"
+  },
+  {
+    "id": 6,
+    "question": "¿Cuál es el planeta más cercano al Sol?",
+    "options": ["Mercurio", "Venus", "Tierra", "Marte"],
+    "correctAnswer": "Mercurio"
+  },
+  {
+    "id": 7,
+    "question": "¿Quién compuso 'La Quinta Sinfonía'?",
+    "options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
+    "correctAnswer": "Ludwig van Beethoven"
+  },
+  {
+    "id": 8,
+    "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+    "options": ["Aluminio", "Hierro", "Calcio", "Sodio"],
+    "correctAnswer": "Aluminio"
+  },
+  {
+    "id": 9,
+    "question": "¿Quién fue el primer presidente de los Estados Unidos?",
+    "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+    "correctAnswer": "George Washington"
+  },
+  {
+    "id": 10,
+    "question": "¿Cuál es el océano más grande del mundo?",
+    "options": ["Océano Pacífico", "Océano Atlántico", "Océano Índico", "Océano Ártico"],
+    "correctAnswer": "Océano Pacífico"
+  }
+]
