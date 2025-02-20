@@ -18,8 +18,9 @@ interface QuizCardProps {
 
 function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestions }: QuizCardProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [timeLeft, setTimeLeft] = useState(15); // Temporizador de 15 segundos
+  const [timeLeft, setTimeLeft] = useState(10); // Temporizador de 10 segundos
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
+  const [constantShuffleOptions, setConstantShuffleOptions] = useState<string[]>([]);
 
   // Función para permutar las opciones
   const shuffleOptions = (options: string[]) => {
@@ -29,11 +30,12 @@ function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestion
       .map(({ option }) => option);
   };
 
-  // Reiniciar el temporizador, el estado selectedAnswer y permutar las opciones cuando cambia la pregunta
+  // Reiniciar el temporizador y el estado selectedAnswer cuando cambia la pregunta
   useEffect(() => {
     setTimeLeft(30); // Reiniciar el temporizador a 30 segundos
     setSelectedAnswer(null); // Reiniciar selectedAnswer a null
-    setShuffledOptions(shuffleOptions(question.options)); // Permutar las opciones
+    setShuffledOptions(question.options); // Establecer las opciones sin permutar
+    setConstantShuffleOptions(question.options); // Establecer las opciones sin permutar
   }, [question]); // Dependencia: question
 
   // Lógica del temporizador
@@ -50,19 +52,31 @@ function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestion
     return () => clearInterval(timer); // Limpiar el temporizador
   }, [timeLeft, onTimeOut]);
 
-  // Permutar las opciones cada 500 ms
+  // Permutar las opciones cada 700 ms
   useEffect(() => {
     const shuffleInterval = setInterval(() => {
-      setShuffledOptions(shuffleOptions(question.options));
-    }, 700);
+      setConstantShuffleOptions(shuffleOptions(shuffledOptions));
+    }, 800);
 
     return () => clearInterval(shuffleInterval); // Limpiar el intervalo
-  }, [question.options]);
+  }, [shuffledOptions]);
 
   const handleClick = (answer: string) => {
     setSelectedAnswer(answer);
     const isCorrect = answer === question.correctAnswer;
+    console.log("Selected Answer:", answer);
+    console.log("Correct Answer:", question.correctAnswer);
+    console.log("Is Correct:", isCorrect);
     onAnswer(isCorrect);
+  };
+
+  // Callbacks para manejar eventos de animación
+  const handleAnimationStart = () => {
+    console.log("Animación iniciada");
+  };
+
+  const handleAnimationFinishAll = () => {
+    console.log("Todas las animaciones han terminado");
   };
 
   return (
@@ -71,8 +85,18 @@ function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestion
         Pregunta {questionNumber} de {totalQuestions}
       </h2>
       <p className="mb-4">{question.question}</p>
-      <FlipMove className="space-y-2">
-        {shuffledOptions.map((option) => (
+      <FlipMove
+        className="space-y-2"
+        duration={500} // Duración de la animación
+        easing="ease-in-out" // Easing suave
+        staggerDurationBy={50} // Efecto escalonado entre las opciones
+        enterAnimation="elevator" // Animación de entrada
+        leaveAnimation="fade" // Animación de salida
+        maintainContainerHeight // Mantener la altura del contenedor
+        onStart={handleAnimationStart} // Callback al inicio de la animación
+        onFinishAll={handleAnimationFinishAll} // Callback al finalizar todas las animaciones
+      >
+        {constantShuffleOptions.map((option) => (
           <button
             key={option} // Usar la opción como clave para asegurar la consistencia
             onClick={() => handleClick(option)}

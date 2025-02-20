@@ -9,9 +9,9 @@ function StartScreen({ onStart, scores }: StartScreenProps) {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-96 text-center">
-      <h1 className="text-2xl font-bold mb-4">Bienvenido al Quiz</h1>
+      <h1 className="text-2xl font-bold mb-4">¡Bienvenid@ a The simplest quiz!</h1>
       <p className="mb-4">
-        Este quiz consta de preguntas de opción múltiple. Tendrás 15 segundos para responder cada
+        Este quiz consta de preguntas de opción múltiple muy sencillas. Tendrás 10 segundos para responder cada
         pregunta. ¡Buena suerte!
       </p>
       <button
