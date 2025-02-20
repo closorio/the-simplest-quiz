@@ -1,62 +1,62 @@
 [
   {
     "id": 1,
-    "question": "¿Cuál es el río más largo del mundo?",
-    "options": ["Amazonas", "Nilo", "Yangtsé", "Misisipi"],
-    "correctAnswer": "Amazonas"
+    "question": "¿Cuánto es 2+2?",
+    "options": ["1", "22", "1982", "4"],
+    "correctAnswer": "4"
   },
   {
     "id": 2,
-    "question": "¿En qué año llegó el hombre a la Luna?",
-    "options": ["1969", "1975", "1982", "1958"],
-    "correctAnswer": "1969"
+    "question": "¿De qué color es el cielo en un día despejado?",
+    "options": ["Verde", "Azul", "Rojo", "Amarillo"],
+    "correctAnswer": "Azul"
   },
   {
     "id": 3,
-    "question": "¿Quién pintó 'La noche estrellada'?",
-    "options": ["Vincent van Gogh", "Pablo Picasso", "Claude Monet", "Salvador Dalí"],
-    "correctAnswer": "Vincent van Gogh"
+    "question": "¿Cuántas patas tiene un perro?",
+    "options": ["2", "4", "6", "8"],
+    "correctAnswer": "4"
   },
   {
     "id": 4,
-    "question": "¿Cuál es la capital de Francia?",
-    "options": ["París", "Londres", "Berlín", "Madrid"],
-    "correctAnswer": "París"
+    "question": "¿Cuál es el resultado de 5 - 3?",
+    "options": ["2", "8", "10", "0"],
+    "correctAnswer": "2"
   },
   {
     "id": 5,
-    "question": "¿Quién escribió '1984'?",
-    "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "J.R.R. Tolkien"],
-    "correctAnswer": "George Orwell"
+    "question": "¿Cómo se llama la estrella que ilumina el día?",
+    "options": ["Luna", "Marte", "Sol", "Estrella Fugaz"],
+    "correctAnswer": "Sol"
   },
   {
     "id": 6,
-    "question": "¿Cuál es el planeta más cercano al Sol?",
-    "options": ["Mercurio", "Venus", "Tierra", "Marte"],
-    "correctAnswer": "Mercurio"
+    "question": "¿Qué animal hace 'miau'?",
+    "options": ["Perro", "Pato", "Gato", "Vaca"],
+    "correctAnswer": "Gato"
   },
   {
     "id": 7,
-    "question": "¿Quién compuso 'La Quinta Sinfonía'?",
-    "options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
-    "correctAnswer": "Ludwig van Beethoven"
+    "question": "¿Cuántos días tiene una semana?",
+    "options": ["5", "6", "7", "8"],
+    "correctAnswer": "7"
   },
   {
     "id": 8,
-    "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
-    "options": ["Aluminio", "Hierro", "Calcio", "Sodio"],
-    "correctAnswer": "Aluminio"
+    "question": "¿Qué usamos para escribir en un cuaderno?",
+    "options": ["Tenedor", "Lápiz", "Zapato", "Pelota"],
+    "correctAnswer": "Lápiz"
   },
   {
     "id": 9,
-    "question": "¿Quién fue el primer presidente de los Estados Unidos?",
-    "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
-    "correctAnswer": "George Washington"
+    "question": "¿Cuántos ojos tiene un ser humano?",
+    "options": ["1", "2", "3", "4"],
+    "correctAnswer": "2"
   },
   {
     "id": 10,
-    "question": "¿Cuál es el océano más grande del mundo?",
-    "options": ["Océano Pacífico", "Océano Atlántico", "Océano Índico", "Océano Ártico"],
-    "correctAnswer": "Océano Pacífico"
+    "question": "¿Cuál es el número siguiente después del 9?",
+    "options": ["8", "10", "12", "100"],
+    "correctAnswer": "10"
   }
 ]
