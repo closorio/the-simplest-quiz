@@ -5,6 +5,10 @@ https://roadmap.sh/projects/quiz-app
     npm install
     npm run dev
     ```
+# Instructions to run the API
+    ```bash 
+    node server.js
+    ```
 
 In this project, we will be making a browser based quiz. The app will present users with a series of multiple-choice questions and after each question, the app will provide immediate feedback on whether the selected answer is correct or incorrect.
 
