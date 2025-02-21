@@ -1,13 +1,13 @@
-import QuizApp from "./pages/QuizApp"
+import QuizApp from "./pages/QuizApp";
 
 function App() {
-
   return (
     <>
-    <QuizApp/>
+      <div className="">
+        <QuizApp />
+      </div>
     </>
   );
-};
+}
 
-
-export default App
+export default App;

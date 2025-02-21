@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  padding: 0;
+@layer base {
+  html {
+    font-family: "Finger Paint", regular;
+    font-size: 16px;
+  }
+}
+
+.body-bg {
+  @apply bg-cover lg:bg-contain bg-center bg-no-repeat md:bg-cover lg:bg-repeat-x;
+  background-image: url('./assets/background-wood.webp');
+}
+
+.bg-custom-blackboard {
+  @apply bg-contain bg-no-repeat bg-center drop-shadow-2xl;
+  background-image: url('/images/img-blackboard.webp');
+}
+
+.bg-custom-half-blackboard {
+  @apply bg-contain bg-no-repeat bg-center;
+  background-image: url('/images/img-half-blackboard.webp');
+  height: 85vh;
+  width: 100vw;
 }

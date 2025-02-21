@@ -32,7 +32,7 @@ function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestion
 
   // Reiniciar el temporizador y el estado selectedAnswer cuando cambia la pregunta
   useEffect(() => {
-    setTimeLeft(30); // Reiniciar el temporizador a 30 segundos
+    setTimeLeft(10); // Reiniciar el temporizador a 10 segundos
     setSelectedAnswer(null); // Reiniciar selectedAnswer a null
     setShuffledOptions(question.options); // Establecer las opciones sin permutar
     setConstantShuffleOptions(question.options); // Establecer las opciones sin permutar
@@ -87,9 +87,6 @@ function QuizCard({ question, onAnswer, onTimeOut, questionNumber, totalQuestion
       <p className="mb-4">{question.question}</p>
       <FlipMove
         className="space-y-2"
-        duration={500} // Duración de la animación
-        easing="ease-in-out" // Easing suave
-        staggerDurationBy={50} // Efecto escalonado entre las opciones
         enterAnimation="elevator" // Animación de entrada
         leaveAnimation="fade" // Animación de salida
         maintainContainerHeight // Mantener la altura del contenedor
