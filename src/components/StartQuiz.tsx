@@ -63,7 +63,7 @@ function StartScreen({ onStart, scores }: StartScreenProps) {
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedScores.map((entry, index) => (
+                  {sortedScores.slice(0,3).map((entry, index) => (
                     <tr key={index}>
                       <td className="border px-4 py-2">{entry.name}</td>
                       <td className="border px-4 py-2">{entry.score}</td>
