@@ -1,6 +1,59 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  padding: 0;
+@layer base {
+  html {
+    font-family: "Finger Paint", regular;
+    font-size: 16px;
+  }
+}
+
+.body-bg {
+  @apply bg-cover lg:bg-contain bg-center bg-no-repeat md:bg-cover lg:bg-repeat-x;
+  background-image: url('./assets/background-wood.webp');
+  height: 100vh;
+  width: 100vw;
+}
+
+.bg-custom-blackboard {
+  @apply bg-contain bg-no-repeat bg-center drop-shadow-2xl;
+  background-image: url('/images/img-blackboard.webp');
+}
+
+.bg-custom-half-blackboard {
+  @apply bg-contain bg-no-repeat bg-center;
+  background-image: url('/images/img-half-blackboard.webp');
+  height: 85vh;
+  width: 100vw;
+}
+
+.bg-custom-quiz-sheet {
+  @apply bg-contain bg-center bg-no-repeat;
+  background-image: url('/images/img-quiz-sheet.webp');
+}
+
+.bg-custom-answer-sheet {
+  @apply bg-contain bg-no-repeat bg-center drop-shadow-2xl;
+  background-image: url('/images/img-answer-sheet.webp');
+  height: 85vh;
+  width: 100vw;
+}
+
+.bttn-custom-response {
+  @apply whitespace-normal p-2 md:p-6 rounded-2xl bg-white/50 hover:bg-blue-200/20 active:bg-blue-200/20 backdrop-blur-[1px] backdrop-opacity-40 [filter:drop-shadow(0_30px_25px_rgba(0,0,0,0.6))] border border-white/40 hover:border-blue-500/20 active:border-blue-500/20; 
+}
+
+.bttn-custom-save-score {
+  @apply font-semibold bg-blue-500 hover:bg-transparent active:bg-transparent text-white hover:text-blue-500 active:text-blue-500   border-2 border-transparent hover:border-blue-500 active:border-blue-500 rounded; 
+}
+
+.bg-custom-correctAnswer {
+  @apply bg-green-200/20 hover:bg-green-200/20 border-green-500/20 hover:border-green-500/20;
+}
+
+.bg-custom-wrongAnswer {
+  @apply bg-red-100/20 hover:bg-red-100/20 border-red-500/20 hover:border-red-500/20;
+}
+
+.text-overflow-center {
+  @apply text-center;
 }
