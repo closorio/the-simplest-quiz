@@ -23,3 +23,24 @@
   height: 85vh;
   width: 100vw;
 }
+
+.bg-custom-quiz-sheet {
+  @apply bg-contain bg-center bg-no-repeat;
+  background-image: url('/images/img-quiz-sheet.webp');
+}
+
+.bttn-custom-response {
+  @apply whitespace-normal p-2 md:p-6 rounded-2xl bg-white/50 hover:bg-blue-200/20 active:bg-blue-200/20 backdrop-blur-[1px] backdrop-opacity-40 [filter:drop-shadow(0_30px_25px_rgba(0,0,0,0.6))] border border-white/40 hover:border-blue-500/20 active:border-blue-500/20; 
+}
+
+.bg-custom-correctAnswer {
+  @apply bg-green-200/20 hover:bg-green-200/20 border-green-500/20 hover:border-green-500/20;
+}
+
+.bg-custom-wrongAnswer {
+  @apply bg-red-100/20 hover:bg-red-100/20 border-red-500/20 hover:border-red-500/20;
+}
+
+.text-overflow-center {
+  @apply text-center;
+}

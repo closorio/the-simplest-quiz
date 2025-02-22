@@ -19,7 +19,7 @@
   },
   {
     "id": 4,
-    "question": "¿Cuál es el resultado de 5 - 3?",
+    "question": "¿Cuál es el resultado de 5-3?",
     "options": ["2", "8", "10", "0"],
     "correctAnswer": "2"
   },
