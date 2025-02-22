@@ -10,6 +10,8 @@
 .body-bg {
   @apply bg-cover lg:bg-contain bg-center bg-no-repeat md:bg-cover lg:bg-repeat-x;
   background-image: url('./assets/background-wood.webp');
+  height: 100vh;
+  width: 100vw;
 }
 
 .bg-custom-blackboard {
@@ -29,8 +31,19 @@
   background-image: url('/images/img-quiz-sheet.webp');
 }
 
+.bg-custom-answer-sheet {
+  @apply bg-contain bg-no-repeat bg-center drop-shadow-2xl;
+  background-image: url('/images/img-answer-sheet.webp');
+  height: 85vh;
+  width: 100vw;
+}
+
 .bttn-custom-response {
   @apply whitespace-normal p-2 md:p-6 rounded-2xl bg-white/50 hover:bg-blue-200/20 active:bg-blue-200/20 backdrop-blur-[1px] backdrop-opacity-40 [filter:drop-shadow(0_30px_25px_rgba(0,0,0,0.6))] border border-white/40 hover:border-blue-500/20 active:border-blue-500/20; 
+}
+
+.bttn-custom-save-score {
+  @apply font-semibold bg-blue-500 hover:bg-transparent active:bg-transparent text-white hover:text-blue-500 active:text-blue-500   border-2 border-transparent hover:border-blue-500 active:border-blue-500 rounded; 
 }
 
 .bg-custom-correctAnswer {
