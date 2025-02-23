@@ -10,23 +10,30 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = process.env.PORT || 5000; // Usar process.env.PORT para compatibilidad con Vercel
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Servir las funciones de la API
-app.use("/api", getScoresRouter); // Asegúrate de que esto esté antes de servir archivos estáticos
-app.use("/api", saveScoreRouter); // Asegúrate de que esto esté antes de servir archivos estáticos
+app.use("/api", getScoresRouter);
+app.use("/api", saveScoreRouter);
 
 // Servir el frontend (React)
 app.use(express.static(path.join(__dirname, "dist")));
+
+// Ruta para manejar todas las solicitudes y servir el frontend
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-// Iniciar el servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en el puerto ${port}`);
-});
+// Iniciar el servidor solo si no estamos en Vercel
+if (process.env.VERCEL !== "1") {
+  app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto ${port}`);
+  });
+}
+
+// Exportar la aplicación para Vercel
+export default app;
