@@ -8,20 +8,16 @@ interface StartScreenProps {
 function StartScreen({ onStart, scores }: StartScreenProps) {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
-  // Función para verificar el tamaño de la pantalla
   const checkScreenSize = () => {
-    setIsMobileOrTablet(window.innerWidth < 1024); // lg breakpoint
+    setIsMobileOrTablet(window.innerWidth < 1024);
   };
 
   useEffect(() => {
-    // Verificar el tamaño de la pantalla al cargar el componente
     checkScreenSize();
-    // Escuchar cambios en el tamaño de la pantalla
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // Ordena los puntajes de mayor a menor
   const sortedScores = scores.sort((a, b) => b.score - a.score);
 
   return (

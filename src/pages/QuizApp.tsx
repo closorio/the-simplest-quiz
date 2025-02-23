@@ -12,27 +12,45 @@ function QuizApp() {
   const [userAnswers, setUserAnswers] = useState<boolean[]>([]);
   const [scores, setScores] = useState<{ name: string; score: number }[]>([]);
 
+  // Obtener la URL base de la API desde las variables de entorno
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "";
+
   useEffect(() => {
-    fetch("/api/getScores")
-      .then((response) => response.json())
-      .then((data) => setScores(data))
-      .catch((error) => console.error("Error al obtener los puntajes:", error));
-  }, []);
+    const fetchScores = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/getScores`);
+        if (!response.ok) {
+          throw new Error("Error al obtener los puntajes");
+        }
+        const data = await response.json();
+        setScores(data);
+      } catch (error) {
+        console.error("Error al obtener los puntajes:", error);
+      }
+    };
+
+    fetchScores();
+  }, [API_BASE_URL]);
 
   const saveScore = async (name: string, score: number) => {
     try {
-      const response = await fetch("/api/saveScore", {
+      const response = await fetch(`${API_BASE_URL}/api/saveScore`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, score }),
       });
+
+      if (!response.ok) {
+        throw new Error("Error al guardar el puntaje");
+      }
+
       const data = await response.json();
       console.log(data.message);
 
       // Actualizar la lista de puntajes
-      const updatedScores = await fetch("/api/getScores").then((res) => res.json());
+      const updatedScores = await fetch(`${API_BASE_URL}/api/getScores`).then((res) => res.json());
       setScores(updatedScores);
 
       // Reiniciar el quiz
