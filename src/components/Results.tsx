@@ -17,15 +17,15 @@ function Results({
   const [isSaving, setIsSaving] = useState(false);
 
   const handleSaveScore = () => {
-    if (isSaving) return; // Evitar múltiples envíos
-    setIsSaving(true); // Deshabilitar el botón
+    if (isSaving) return;
+    setIsSaving(true);
 
     if (name.trim()) {
-      onSaveScore(name); // Llamar a la función para guardar el puntaje
-      setIsSaving(false); // Rehabilitar el botón
+      onSaveScore(name);
+      setIsSaving(false);
     } else {
       alert("Por favor, ingresa tu nombre.");
-      setIsSaving(false); // Rehabilitar el botón
+      setIsSaving(false);
     }
   };
 
