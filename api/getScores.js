@@ -13,8 +13,6 @@ const __dirname = path.dirname(__filename);
 const scoresFilePath = path.join(__dirname, "../scores.json");
 
 router.get("/getScores", (req, res) => {
-    console.log("Leyendo puntajes desde:", scoresFilePath); // Depuración
-  
     fs.readFile(scoresFilePath, "utf8", (err, data) => {
       if (err) {
         console.error("Error al leer los puntajes:", err); // Depuración

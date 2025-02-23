@@ -16,17 +16,17 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Servir las funciones serverless
-app.use("/api", getScoresRouter);
-app.use("/api", saveScoreRouter);
+// Servir las funciones de la API
+app.use("/api", getScoresRouter); // Asegúrate de que esto esté antes de servir archivos estáticos
+app.use("/api", saveScoreRouter); // Asegúrate de que esto esté antes de servir archivos estáticos
 
 // Servir el frontend (React)
-app.use(express.static(path.join(__dirname, "dist")));  
+app.use(express.static(path.join(__dirname, "dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
