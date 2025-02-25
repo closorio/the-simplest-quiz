@@ -1,24 +1,18 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const scoresFilePath = path.join(__dirname, "../scores.json");
 
 export default async (req, res) => {
   try {
-    // Verificar que la solicitud sea GET
     if (req.method !== "GET") {
       return res.status(405).json({ message: "Método no permitido" });
     }
 
-    // Leer los puntajes desde el archivo JSON
+    // Usar process.cwd() para obtener la ruta correcta en Vercel
+    const scoresFilePath = path.join(process.cwd(), "scores.json");
+
     const data = await fs.promises.readFile(scoresFilePath, "utf8");
     const scores = JSON.parse(data);
 
-    // Responder con los puntajes
     res.status(200).json(scores);
   } catch (err) {
     console.error("Error al leer los puntajes:", err);
