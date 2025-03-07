@@ -3,5 +3,10 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "lib": ["DOM", "ES2022"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  }
 }
+

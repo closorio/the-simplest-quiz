@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🛠️ Checkout code
+      uses: actions/checkout@v2
+
+    - name: 🔧 Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        cache: 'npm'  # Habilita el cache de dependencias
+
+    - name: 📦 Install dependencies
+      run: npm ci  # Usa npm ci para una instalación limpia y reproducible
+
+    - name: 🔬 Run tests with Vitest
+      run: npm test
+
+    - name: 🗿 Check code formatting
+      run: npm run format:check  # Verifica el formato del código (si se usa Prettier)
+
+    - name: 👮 Check types (if using TypeScript)
+      run: npm run type-check  # Verifica los tipos de TypeScript
+
+    - name: 🚀 Build project
+      run: npm run build
+
+    - name: 💽 Upload coverage report
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage-report
+        path: coverage  # Sube el reporte de cobertura como un artefacto
