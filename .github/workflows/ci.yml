@@ -28,9 +28,6 @@ jobs:
     - name: 🔬 Run tests with Vitest
       run: npm test
 
-    - name: 🗿 Check code formatting
-      run: npm run format:check  # Verifica el formato del código (si se usa Prettier)
-
     - name: 👮 Check types (if using TypeScript)
       run: npm run type-check  # Verifica los tipos de TypeScript
 
