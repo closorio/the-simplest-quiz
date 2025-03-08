@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest",
+    "test:prod": "vitest",
     "build": "vite build",
     "lint": "eslint .",
     "format:check": "prettier --check .",
