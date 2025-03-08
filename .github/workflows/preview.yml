@@ -23,7 +23,7 @@ jobs:
 
             - run: npm ci
 
-            - run: npm test:prod
+            - run: npm run test:prod
 
     Deploy-Preview:
         needs: [Test]
